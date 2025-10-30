@@ -1,73 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="da">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Work Hour Tracker | BIS Prototype</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>BIS | Medarbejder Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <img src="assets/logo.png" alt="Company Logo" class="logo">
-        <h1>Employee Work Hour Tracker</h1>
-    </header>
+<header>
+     <img src="assets/logo.png  " alt="Firma Logo" class="logo" height="60">
+    <h1>BIS – Manager Dashboard</h1>
+</header>
 
-    <main>
-        <section id="log-section">
-            <h2>Log Work Hours</h2>
-            <form id="workLogForm">
-                <label>Employee Name:</label>
-                <input type="text" id="employeeName" placeholder="Enter name" required>
+<main>
+    <section id="user-section">
+        <h2>Vælg medarbejder</h2>
+        <select id="activeUserSelect"></select>
+        <button id="toManager">Gå til Manager-side</button>
+    </section>
 
-                <label>Hourly Wage (DKK):</label>
-                <input type="number" id="hourlyWage" placeholder="e.g., 150" required>
+    <section id="log-section">
+        <h2>Registrér arbejdstimer</h2>
+        <form id="workLogForm">
+            <label>Dato:</label>
+            <input type="date" id="workDate" required>
 
-                <label>Start Time:</label>
-                <input type="time" id="startTime" required>
+            <label>Starttid:</label>
+            <input type="time" id="startTime" required>
 
-                <label>End Time:</label>
-                <input type="time" id="endTime" required>
+            <label>Sluttid:</label>
+            <input type="time" id="endTime" required>
 
-                <button type="submit">Log Hours</button>
-            </form>
-        </section>
+            <button type="submit">Tilføj vagt</button>
+        </form>
+    </section>
 
-        <section id="output-section">
-            <h2>Logged Hours</h2>
-            <table id="logTable">
-                <thead>
-                    <tr>
-                        <th>Employee</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Hours</th>
-                        <th>Wage (DKK)</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </section>
+    <section id="output-section">
+        <h2>Dine vagter</h2>
+        <table id="logTable">
+            <thead>
+                <tr>
+                    <th>Dato</th>
+                    <th>Start</th>
+                    <th>Slut</th>
+                    <th>Timer</th>
+                    <th>Løn (DKK)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
 
-        <section id="shift-section">
-            <h2>Available Shifts</h2>
-            <div id="shiftList"></div>
-            <button id="releaseShiftBtn">Release a Shift</button>
-        </section>
+    <section id="summary-section">
+        <h2>Opsummering</h2>
+        <p id="totalHours">Samlede timer: 0</p>
+        <p id="totalEarnings">Samlet løn: 0 DKK</p>
+        <button id="exportBtn">Eksportér til CSV</button>
+    </section>
+</main>
 
-        <section id="summary-section">
-            <h2>Monthly Summary</h2>
-            <p id="totalHours">Total Hours: 0</p>
-            <p id="totalEarnings">Total Earnings: 0 DKK</p>
-        </section>
-    </main>
+<footer>
+    <p>© 2025 BIS Prototype – Gruppe 15</p>
+</footer>
 
-    <footer>
-        <p>© 2025 Small Business BIS Prototype | Group 15</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>

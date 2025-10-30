@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS | Manager Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <img src="assets/logo.png" alt="Firma Logo" class="logo" height="60">
+    <h1>BIS – Manager Dashboard</h1>
+</header>
+
+<main>
+    <section id="manager-tools">
+        <h2>Administrator Panel</h2>
+        <button id="backToEmployee">← Tilbage til medarbejder-side</button>
+
+        <h3>Opret ny medarbejder</h3>
+        <form id="userForm">
+            <label>Navn:</label>
+            <input type="text" id="userName" required placeholder="Fx Maria Jensen">
+
+            <label>Rolle:</label>
+            <select id="userRole">
+                <option value="employee">Medarbejder</option>
+                <option value="manager">Manager</option>
+            </select>
+
+            <label>Timeløn (DKK):</label>
+            <input type="number" id="userWage" required placeholder="Fx 150">
+
+            <label>Login kode (4 cifre):</label>
+            <input type="number" id="userPin" required placeholder="Fx 1234" min="1000" max="9999">
+
+            <button type="submit">Opret Bruger</button>
+        </form>
+
+        <hr>
+        <label>Filtrer efter måned:</label>
+        <input type="month" id="monthFilter">
+    </section>
+
+    <section id="overview-section">
+        <h2>Virksomhedsoversigt</h2>
+        <table id="managerTable">
+            <thead>
+                <tr>
+                    <th>Medarbejder</th>
+                    <th>Antal vagter</th>
+                    <th>Samlede timer</th>
+                    <th>Samlet løn (DKK)</th>
+                    <th>Gennemsnitlig timeløn</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p id="companyTotals"></p>
+    </section>
+
+    <section id="charts">
+        <h2>Lønstatistik</h2>
+        <canvas id="earningsChart"></canvas>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 BIS Prototype – Gruppe 15</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
